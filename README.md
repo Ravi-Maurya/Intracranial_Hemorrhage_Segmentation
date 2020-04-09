@@ -6,4 +6,4 @@ Intracranial hemorrhage refers to any bleeding within the intracranial vault, in
 The most important risk factors for ICH include hypertension (HTN) and cerebral amyloid angiopathy (CAA). HTN-related ICH is more likely to occur in deep structures, and the risk of ICH increases with increasing blood pressure values. CAA tends to occur in association with advanced age, and CAA-related ICH tends to occur in lobar regions. Other Factors include - Alchohol Intake, Cholestrol, Genetics, Anticoagulation and drug abuse.
 
 We are going to detect following subtypes:-
-![ICH_Subtypes](https://github.com/Ravi-Maurya/Intracranial_Hemorrhage_Segmentation/blob/master/Templates/ICH_Types.png)
+![ICH_Subtypes](https://github.com/Ravi-Maurya/Intracranial_Hemorrhage_Segmentation/blob/master/images/ICH_Types.png)
