@@ -12,3 +12,6 @@ We are going to detect following subtypes:-
 1. Install packages from requirments.txt
 2. Download the Repository
 3. Run python3 app.py
+
+# Version Log
+V1 -> This is potentially the first version for the detection algorithm can check here <a href = "https://github.com/Ravi-Maurya/Intracranial_Hemorrhage_Segmentation/blob/master/model/ICH_Efficient_Net.ipynb">Notebook</a>
