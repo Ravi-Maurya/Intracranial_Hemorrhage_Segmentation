@@ -7,3 +7,8 @@ The most important risk factors for ICH include hypertension (HTN) and cerebral 
 
 We are going to detect following subtypes:-
 ![ICH_Subtypes](https://github.com/Ravi-Maurya/Intracranial_Hemorrhage_Segmentation/blob/master/images/ICH_Types.png)
+
+# How To Run
+1. Install packages from requirments.txt
+2. Download the Repository
+3. Run python3 app.py
