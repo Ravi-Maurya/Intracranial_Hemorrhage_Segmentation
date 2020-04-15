@@ -28,8 +28,7 @@ def uploader():
 
 @app.route('/<filename>')
 def run_model(filename):
-    nn = model.DeepModel()
-    nn.create()
+    nn = model.DeepModel(batch_size=8)
     nn.predict(filename)
     res = nn.result()
     nn.destroy()

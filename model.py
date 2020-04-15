@@ -27,6 +27,7 @@ except ImportError:
     import plotly.graph_objs as go
     from matplotlib.pyplot import plot
 
+
 class Transform:
     def __init__(self, path, shape):
         self.path = path
@@ -71,6 +72,7 @@ class Transform:
 
 class DeepModel:
     def __init__(self, batch_size=16, height=256, width=256, channel=3):
+        K.clear_session()
         self.tmp = open('model/model.json', 'r')
         self.loaded_model = self.tmp.read()
         self.tmp.close()
@@ -81,23 +83,21 @@ class DeepModel:
         self.OUTPUT = ["Any", "Epidural", "Intraparenchymal", "Intraventricular", "Subarachnoid", "Subdural"]
         self.X = None
         self.Y = None
+        self.create()
 
     def create(self):
         self.model = model_from_json(self.loaded_model)
-        self.model.load_weights('model/model.h5')
+        # self.model.load_weights('model/model.h5')
 
     def destroy(self):
-        del self.model
-        gc.collect()
-        self.model = None
         K.clear_session()
+        gc.collect()
 
     def predict(self, id_name):
         self.Y = None
         self.X = None
-        self.id_name = id_name
         self.X = np.empty((self.batch_size, *self.shape))
-        self.X[0, ] = Transform(self.IMAGE_DIR + self.id_name, self.shape).read()
+        self.X[0,] = Transform(self.IMAGE_DIR + id_name, self.shape).read()
         self.Y = np.average(self.model.predict(self.X), axis=0)
 
     def result(self):
@@ -107,15 +107,8 @@ class DeepModel:
         for i in range(6):
             print("{}: {}".format(self.OUTPUT[i], self.Y[i]))
 
-    def show_plot(self):
-        fig = go.Figure([go.Bar(x = self.OUTPUT, y = self.Y)])
-        fig.write_html("templates/fig.html")
-        return 'home/ravi/Desktop/GitHub/Intracranial_Hemorrhage_Segmentation/templates/fig.html'
-
-
-
 # if __name__=='__main__':
 #     model = DeepModel()
 #     model.create()
-#     model.predict('ID_000000e27')
-#     model.show_plot()
+#     model.predict('ID_000000e27.dcm')
+#     model.probability_table()
