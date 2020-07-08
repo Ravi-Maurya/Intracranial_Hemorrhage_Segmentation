@@ -51,22 +51,22 @@ path:nth-child(2){opacity:1;}
 path{fill:#d94}
 .body_style{background-color:#48d;color:#ccc}
 .card{
-  background-color: #dd9944;
+  background-color: #d94;
   height: auto;
   width: auto;
-  position: absolute;
-  max-width: 20em;
-  margin-top: 10%;
+  position: relative;
+  max-width: 25em;
+  margin-top: 4%;
   margin-right: 10%;
   min-width: min-content;
 }
 .card-body{
-  background-color: #dd9944;
+  background-color: #d94;
   color: black;
   text-align: center;
   align-content: center;
   align-items: center;
-  margin: 1px;
+  margin: 0px;
 }
 .card-text,
 .card-title{

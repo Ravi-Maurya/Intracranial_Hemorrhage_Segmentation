@@ -7,13 +7,21 @@ Home Page
 <div class="card  float-right">
     <div class="card-body">
         <h5 class="card-title">Intracranial Hemorrhage Classifier</h5>
-        <p class="card-text">This model uses EfficientNet Deep Neural Network for the classificattion of Hemorrhages casused by Strokes</p>
-        {% if res|string() == "Any" %}
-        <p class="card-title">You are OK!</p>
-        {% else %}
-        <p class="card-title">High chance of having <b>{{res}}!</b> Get Treatment ASAP </p>
-        {% endif %}
-        <a href="{{ url_for('homepage') }}" class="btn btn-primary">Another One!</a>
+        <p class="card-text">This model uses EfficientNet Deep Neural Network for the classifications of Hemorrhages caused by Strokes</p>
+<!--        {% if res|string() == "Any" %}-->
+<!--        <p class="card-title">You are OK!</p>-->
+<!--        {% else %}-->
+<!--        <p class="card-title">High chance of having <b>{{res}}!</b> Get Treatment ASAP </p>-->
+<!--        {% endif %}-->
+        <table class="card-text table table-sm">
+            {% for i in range(0,size) %}
+            <tr>
+                <th scope="row">{{ res[0][i] }}</th>
+                <td>{{ res[1][i] * 100 }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="{{ url_for('homepage') }}" class="btn btn-primary">Reset</a>
     </div>
 </div>
 {% endblock %}

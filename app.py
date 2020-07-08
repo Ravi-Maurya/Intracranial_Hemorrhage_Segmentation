@@ -31,9 +31,11 @@ def run_model(filename):
     nn = model.DeepModel(batch_size=8)
     nn.predict(filename)
     res = nn.result()
+    size = len(res[0])
+    print(size,res)
     nn.destroy()
     del nn
-    return render_template("prediction.html", res=res)
+    return render_template("prediction.html", res=res, size = size,)
     # return send_from_directory(app.config['UPLOAD_FOLDER'],filename)
 
 

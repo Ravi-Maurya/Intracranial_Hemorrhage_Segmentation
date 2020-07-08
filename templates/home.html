@@ -7,11 +7,11 @@ Home Page
 <div class="card  float-right">
     <div class="card-body">
         <h5 class="card-title">Intracranial Hemorrhage Classifier</h5>
-        <p class="card-text">This model uses EfficientNet Deep Neural Network for the classificattion of Hemorrhages casused by Strokes</p>
+        <p class="card-text">This model uses EfficientNet Deep Neural Network for the classifications of Hemorrhages caused by Strokes</p>
         <form action = "{{url_for('uploader')}}" method = "POST" class="form-group" enctype="multipart/form-data">
             <label for="exampleFormControlFile1">Browse the DICOM File Format Only</label>
             <input class="form-control-file" id="exampleFormControlFile1" type = "file" name = "file">
-            <input type = "submit" class="btn btn-primary">
+            <input type = "submit" class="btn btn-primary" value="Predict Probabilities">
         </form>
     </div>
 </div>

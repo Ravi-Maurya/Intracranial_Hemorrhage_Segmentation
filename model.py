@@ -101,7 +101,8 @@ class DeepModel:
         self.Y = np.average(self.model.predict(self.X), axis=0)
 
     def result(self):
-        return self.OUTPUT[self.Y.argmax()]
+        ans = [self.OUTPUT, self.Y]
+        return ans
 
     def probability_table(self):
         for i in range(6):
