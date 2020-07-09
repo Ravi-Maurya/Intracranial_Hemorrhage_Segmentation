@@ -1,0 +1,5 @@
+https://arxiv.org/pdf/1905.11946.pdf
+https://ai.googleblog.com/2019/05/efficientnet-improving-accuracy-and.html
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3540547/
+https://www.researchgate.net/publication/330682890_Predicting_Intracerebral_Hemorrhage_Patients'_Length-of-Stay_Probability_Distribution_Based_on_Demographic_Clinical_Admission_Diagnosis_and_Surgery_Information
+https://www.researchgate.net/publication/336727705_Expert-level_detection_of_acute_intracranial_hemorrhage_on_head_computed_tomography_using_deep_learning
