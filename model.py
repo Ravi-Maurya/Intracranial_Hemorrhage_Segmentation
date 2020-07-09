@@ -23,9 +23,13 @@ except ImportError:
     import keras
     from keras.layers import Dense, Dropout
     from keras.models import Model, model_from_json
+    from keras import backend as K
     import efficientnet.keras as efn
+    import plotly
     import plotly.graph_objs as go
-    from matplotlib.pyplot import plot
+    import plotly.io as pio
+    import json
+    import gc
 
 
 class Transform:
@@ -87,7 +91,7 @@ class DeepModel:
 
     def create(self):
         self.model = model_from_json(self.loaded_model)
-        # self.model.load_weights('model/model.h5')
+        self.model.load_weights('model/model.h5')
 
     def destroy(self):
         K.clear_session()
@@ -97,8 +101,10 @@ class DeepModel:
         self.Y = None
         self.X = None
         self.X = np.empty((self.batch_size, *self.shape))
-        self.X[0,] = Transform(self.IMAGE_DIR + id_name, self.shape).read()
-        self.Y = np.average(self.model.predict(self.X), axis=0)
+        self.X[0, ] = Transform(self.IMAGE_DIR + id_name, self.shape).read()
+        tmp = self.model.predict(self.X)
+        # self.Y = np.average(tmp, axis=0)
+        self.Y = tmp[0]
 
     def result(self):
         ans = [self.OUTPUT, self.Y]

@@ -1,7 +1,9 @@
-from flask import Flask, render_template, request, redirect, send_from_directory, url_for
-from werkzeug import secure_filename
-import model
 import os
+
+from flask import Flask, render_template, request, redirect, url_for
+from werkzeug import secure_filename
+
+import model
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 app = Flask(__name__)
@@ -28,14 +30,14 @@ def uploader():
 
 @app.route('/<filename>')
 def run_model(filename):
-    nn = model.DeepModel(batch_size=8)
+    nn = model.DeepModel(batch_size=1)
     nn.predict(filename)
     res = nn.result()
-    size = len(res[0])
-    print(size,res)
+    sz = len(res[0])
+    nn.probability_table()
     nn.destroy()
     del nn
-    return render_template("prediction.html", res=res, size = size,)
+    return render_template("prediction.html", res=res,size=sz)
     # return send_from_directory(app.config['UPLOAD_FOLDER'],filename)
 
 
