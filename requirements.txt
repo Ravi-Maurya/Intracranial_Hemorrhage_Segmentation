@@ -169,7 +169,7 @@ pydicom==1.4.2
 pyEMMA==2.5.6
 pyflakes==2.1.1
 pyglet==1.4.1
-Pygments==2.4.2
+Pygments==2.7.4
 pygpu==0.7.6
 pylint==2.4.4
 pyOpenSSL==19.0.0
