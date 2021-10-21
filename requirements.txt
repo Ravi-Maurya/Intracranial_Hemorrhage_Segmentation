@@ -7,7 +7,7 @@ asn1crypto==0.24.0
 astor==0.8.0
 astroid==2.3.3
 attrs==19.1.0
-Babel==2.7.0
+Babel==2.9.1
 backcall==0.1.0
 bayesian-optimization==1.0.1
 bhmm==0.6.3
