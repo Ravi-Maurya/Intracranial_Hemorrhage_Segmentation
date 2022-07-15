@@ -47,7 +47,7 @@ decorator==4.4.0
 defusedxml==0.6.0
 descartes==1.1.0
 dill==0.3.0
-distributed==2.3.2
+distributed==2021.10.0
 docutils==0.15.2
 downhill==0.4.0
 ecos==2.0.7.post1
