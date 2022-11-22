@@ -150,7 +150,7 @@ patsy==0.5.1
 pexpect==4.7.0
 pickle5==0.0.8
 pickleshare==0.7.5
-Pillow==6.1.0
+Pillow==9.3.0
 pipenv==2018.11.26
 plac==1.0.0
 plotly==3.10.0
